@@ -1,8 +1,8 @@
-package com.bach.dv.basemvp.utils
+package com.bach.dv.basemvp.util
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.bach.dv.basemvp.ui.App
+import com.bach.dv.basemvp.App
 
 open abstract class SharedPrefsUtils {
     var preferences: SharedPreferences? = null

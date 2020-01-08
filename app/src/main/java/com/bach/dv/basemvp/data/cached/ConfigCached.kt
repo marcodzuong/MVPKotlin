@@ -1,9 +1,7 @@
-package com.bach.dv.basemvp.cached
+package com.bach.dv.basemvp.data.cached
 
 import android.annotation.SuppressLint
-import com.bach.dv.basemvp.utils.SharedPrefsUtils
-import com.google.gson.reflect.TypeToken
-import java.util.ArrayList
+import com.bach.dv.basemvp.util.SharedPrefsUtils
 
 class ConfigCached : SharedPrefsUtils() {
     override val getKeyShare: String

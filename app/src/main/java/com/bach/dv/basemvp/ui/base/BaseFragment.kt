@@ -1,4 +1,4 @@
-package com.bach.dv.basemvp.base
+package com.bach.dv.basemvp.ui.base
 
 import android.os.Bundle
 import android.view.LayoutInflater

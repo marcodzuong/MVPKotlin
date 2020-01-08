@@ -1,4 +1,4 @@
-package com.bach.dv.basemvp.base
+package com.bach.dv.basemvp.ui.base
 /**
 Created by duongvanbach.hust@gmail.com on 18/12/2019
  */

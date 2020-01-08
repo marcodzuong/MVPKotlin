@@ -1,7 +1,7 @@
 package com.bach.dv.basemvp.ui.splash
 
 import android.os.Handler
-import com.bach.dv.basemvp.base.BasePresenter
+import com.bach.dv.basemvp.ui.base.BasePresenter
 
 class SplashPresenter : BasePresenter<ISplashView>(), ISplashPresenter {
     fun postDelay() {

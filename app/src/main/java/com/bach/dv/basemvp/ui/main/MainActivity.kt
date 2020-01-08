@@ -5,8 +5,8 @@ import android.content.Intent
 import android.widget.TextView
 import butterknife.BindView
 import com.bach.dv.basemvp.R
-import com.bach.dv.basemvp.base.BaseActivity
-import com.bach.dv.basemvp.utils.toastSuccess
+import com.bach.dv.basemvp.ui.base.BaseActivity
+import com.bach.dv.basemvp.util.toastSuccess
 
 class MainActivity : BaseActivity<MainPresenter?>(), IMainView {
     override fun showToast() {

@@ -1,13 +1,13 @@
 package com.bach.dv.basemvp.ui.splash
 
 import com.bach.dv.basemvp.R
-import com.bach.dv.basemvp.base.BaseActivity
-import com.bach.dv.basemvp.ui.main.MainActivity
+import com.bach.dv.basemvp.ui.base.BaseActivity
+import com.bach.dv.basemvp.ui.login.LoginActivity
 
 class SplashActivity : BaseActivity<SplashPresenter>(), ISplashView {
 
     override fun goToContinue() {
-        MainActivity.start(this)
+        LoginActivity.start(this)
     }
 
     override val layoutId: Int

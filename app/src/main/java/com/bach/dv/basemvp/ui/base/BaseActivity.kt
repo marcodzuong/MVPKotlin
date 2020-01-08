@@ -1,7 +1,6 @@
-package com.bach.dv.basemvp.base
+package com.bach.dv.basemvp.ui.base
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import butterknife.ButterKnife
 import butterknife.Unbinder
