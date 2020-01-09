@@ -22,10 +22,11 @@ class LoginActivity : BaseActivity<LoginPresenter>(), ILoginView {
         onAttachedView()
         tvLogin.setOnClickListener(object : OnSingleClickListener() {
             override fun onSingleClick(view: View) {
-                toastSuccess("da dang nhap")
+                toastSuccess("Dang nhap thanh cong.")
                 MainActivity.start(this@LoginActivity)
             }
         })
+
 
     }
 
