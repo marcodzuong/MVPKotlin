@@ -5,15 +5,76 @@ import com.bach.dv.basemvp.BuildConfig
 import com.bach.dv.basemvp.network.base.ApiConstant
 import com.bach.dv.basemvp.ui.common.Constants
 import com.bach.dv.basemvp.util.SharedPrefsUtils
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Converter
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import java.lang.reflect.Type
+import java.util.*
 import java.util.concurrent.TimeUnit
 
-class BaseRemote {
+open class BaseRemote {
     companion object {
+        private val TAG = "BaseRemote: "
+        private val URL = "http://develop.meety.vn:6161"
         private var okHttpClient: OkHttpClient? = null
-        const val REQUEST_TIMEOUT: Long = 20
-        fun initOKHttp() {
+        private var retrofitBrowse: Retrofit? = null
+        private var retrofit: Retrofit? = null
+        const val REQUEST_TIMEOUT: Long = 60
+        protected fun <T> create(clazz: Class<T>): T? {
+            return getInstance()?.create(clazz)
+        }
+
+        protected fun <T> createWithTypeAdapter(
+            clazz: Class<T>,
+            type: Type,
+            typeAdapter: Object
+        ): T? {
+            var service = getInstance()?.create(clazz)
+            return service
+        }
+
+        fun getInstance(type: Type, typeAdapter: Objects): Retrofit? {
+            if (okHttpClient == null) {
+                initOkHttp()
+            }
+            var gsonBuilder = GsonBuilder()
+            gsonBuilder.setLenient()
+            gsonBuilder.registerTypeAdapter(type, typeAdapter)
+            var gson = gsonBuilder.create() as Gson
+            retrofitBrowse = Retrofit.Builder()
+                .baseUrl(URL)
+                .client(okHttpClient)
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .addConverterFactory(createGsonConverter(type, typeAdapter)).build()
+
+            return retrofitBrowse
+        }
+
+        private fun getInstance(): Retrofit? {
+            val gson = GsonBuilder()
+                .setLenient()
+                .create()
+
+            if (okHttpClient == null) {
+                initOkHttp()
+            }
+            if (retrofit == null) {
+                retrofit = Retrofit.Builder()
+                    .baseUrl(URL)
+                    .client(okHttpClient)
+                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create(gson))
+                    .build()
+            }
+            return retrofit
+        }
+
+        private fun initOkHttp() {
             val httpClient =
                 OkHttpClient.Builder().connectTimeout(REQUEST_TIMEOUT, TimeUnit.SECONDS)
                     .readTimeout(REQUEST_TIMEOUT, TimeUnit.SECONDS)
@@ -63,6 +124,13 @@ class BaseRemote {
             else
                 HttpLoggingInterceptor.Level.NONE
             return interceptor
+        }
+
+        fun createGsonConverter(type: Type?, typeAdapter: Objects?): Converter.Factory? {
+            var gsonBuilder = GsonBuilder()
+            gsonBuilder.registerTypeAdapter(type, typeAdapter)
+            val gson = gsonBuilder.create() as Gson
+            return GsonConverterFactory.create(gson)
         }
 
     }

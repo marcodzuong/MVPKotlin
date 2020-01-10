@@ -13,14 +13,12 @@ class BaseErrorResponse {
 
     fun setError(code: String, message: String) {
         errors = mutableListOf()
+        var error = Error()
+        error.code = code
+        error.message = message
         errors!!.add(Error())
-
     }
 
-    class Error {
-        var code: String? = null
-        var message: String? = null
-    }
 
     companion object {
         class Error {
@@ -28,6 +26,7 @@ class BaseErrorResponse {
             var message: String? = null
         }
     }
+
 }
 
 
