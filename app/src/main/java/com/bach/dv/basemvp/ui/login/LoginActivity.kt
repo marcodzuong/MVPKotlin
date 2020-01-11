@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.TextView
 import butterknife.BindView
 import com.bach.dv.basemvp.R
+import com.bach.dv.basemvp.data.cached.UserCached
 import com.bach.dv.basemvp.ui.base.BaseActivity
 import com.bach.dv.basemvp.ui.main.MainActivity
 import com.bach.dv.basemvp.util.toastSuccess
@@ -23,6 +24,7 @@ class LoginActivity : BaseActivity<LoginPresenter>(), ILoginView {
         tvLogin.setOnClickListener(object : OnSingleClickListener() {
             override fun onSingleClick(view: View) {
                 toastSuccess("Dang nhap thanh cong.")
+                UserCached.getConfigCached()?.saveUser("123", "duongvanbach")
                 MainActivity.start(this@LoginActivity)
             }
         })

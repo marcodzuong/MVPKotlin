@@ -1,10 +1,7 @@
 package com.bach.dv.basemvp.network.base.remote
 
-import android.text.TextUtils
 import com.bach.dv.basemvp.BuildConfig
 import com.bach.dv.basemvp.network.base.ApiConstant
-import com.bach.dv.basemvp.ui.common.Constants
-import com.bach.dv.basemvp.util.SharedPrefsUtils
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -89,13 +86,13 @@ open class BaseRemote {
 
                 //             Adding Authorization token (API Key)
                 //             Requests will be denied without API key
-                val token = SharedPrefsUtils.getStringPreference(Constants.SharePref.KEY_TOKEN)
+                //  val token = SharedPrefsUtils.getStringPreference(Constants.SharePref.KEY_TOKEN)
                 //            token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyOSIsInJvbGVzIjpbXSwiaWF0IjoxNTU5OTAwMDMyLCJleHAiOjE1NjA4OTAwMzJ9.s1NQGWgUObZxBeU2wipPrJIZWUD1K9b5iDLN4RFF0NU";
-                if (!TextUtils.isEmpty(token) && !original.url().toString().contains("auth/signin/social")) {
-                    val tokenMix = ApiConstant.BEARER + token
-//                    Logger.i(TAG, "Token: $token")
-                    requestBuilder.addHeader(ApiConstant.TOKEN, tokenMix)
-                }
+//                if (!TextUtils.isEmpty(token) && !original.url().toString().contains("auth/signin/social")) {
+//                    val tokenMix = ApiConstant.BEARER + token
+////                    Logger.i(TAG, "Token: $token")
+//                    requestBuilder.addHeader(ApiConstant.TOKEN, tokenMix)
+//                }
 
 //                // add device ID.
 //                var deviceId = DeviceUtils.getAndroidID()

@@ -1,22 +1,12 @@
 package com.bach.dv.basemvp.network.base.remote.response
 
-import android.os.Parcel
-import android.os.Parcelable
-import io.reactivex.annotations.Nullable
-import retrofit2.Response
-import java.lang.RuntimeException
-
-class BaseExeption : RuntimeException() {
+class BaseException : RuntimeException() {
     private var type: Type? = null
     private var errorResponse: BaseErrorResponse? = null
 
 
-
-
 //    @Nullable
 //    private val response: Response<*>?
-
-
 
 
     fun getServerErrorCode(): String? {

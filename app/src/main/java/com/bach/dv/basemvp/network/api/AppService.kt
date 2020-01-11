@@ -1,7 +1,6 @@
 package com.bach.dv.basemvp.network.api
 
-import com.bach.dv.basemvp.network.BaseResponse
-import com.bach.dv.basemvp.network.GetUserResponse
+import com.bach.dv.basemvp.network.model.GetUserResponse
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Query

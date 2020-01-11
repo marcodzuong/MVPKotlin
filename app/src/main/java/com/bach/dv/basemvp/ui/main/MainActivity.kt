@@ -5,12 +5,12 @@ import android.content.Intent
 import android.widget.TextView
 import butterknife.BindView
 import com.bach.dv.basemvp.R
+import com.bach.dv.basemvp.data.cached.UserCached
 import com.bach.dv.basemvp.ui.base.BaseActivity
 import com.bach.dv.basemvp.util.toastSuccess
 
 class MainActivity : BaseActivity<MainPresenter?>(), IMainView {
     override fun showToast() {
-        tvMain.text = ""
         toastSuccess("custom thanh cong")
     }
 
@@ -22,6 +22,7 @@ class MainActivity : BaseActivity<MainPresenter?>(), IMainView {
 
     override fun initData() {
         onAttachedView()
+        tvMain.text = UserCached.getConfigCached()?.getUser("123")
         mPresenter?.getData()
     }
 
@@ -31,7 +32,8 @@ class MainActivity : BaseActivity<MainPresenter?>(), IMainView {
     }
 
     companion object {
-        @JvmStatic fun start(context: Context) {
+        @JvmStatic
+        fun start(context: Context) {
             val starter = Intent(context, MainActivity::class.java)
             context.startActivity(starter)
         }
