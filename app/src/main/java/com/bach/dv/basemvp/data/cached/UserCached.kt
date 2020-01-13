@@ -12,7 +12,7 @@ class UserCached {
 
     companion object {
         private var configCached: UserCached? = null
-        fun getConfigCached(): UserCached? {
+        fun getInstance(): UserCached? {
             if (configCached == null) {
                 configCached = UserCached()
             }

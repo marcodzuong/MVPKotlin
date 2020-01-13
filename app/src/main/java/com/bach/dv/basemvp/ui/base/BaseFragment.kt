@@ -12,8 +12,10 @@ import butterknife.Unbinder
 Created by duongvanbach.hust@gmail.com on 18/12/2019
  */
 abstract class BaseFragment<C> : Fragment() {
+
     var mPresenter: C? = null
     private var mUnbinder: Unbinder? = null
+    abstract val getLayoutId: Int
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -27,7 +29,6 @@ abstract class BaseFragment<C> : Fragment() {
         return view
     }
 
-    abstract val getLayoutId: Int
     abstract fun updateContentView()
     override fun onDestroy() {
         mUnbinder?.unbind()

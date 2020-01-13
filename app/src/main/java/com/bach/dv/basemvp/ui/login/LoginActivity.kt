@@ -18,23 +18,21 @@ class LoginActivity : BaseActivity<LoginPresenter>(), ILoginView {
     override val layoutId: Int
         get() = R.layout.activity_login
 
-
+    init {
+        mPresenter = LoginPresenter()
+        mPresenter?.onAttachView(this)
+    }
     override fun initData() {
-        onAttachedView()
         tvLogin.setOnClickListener(object : OnSingleClickListener() {
             override fun onSingleClick(view: View) {
                 toastSuccess("Dang nhap thanh cong.")
-                UserCached.getConfigCached()?.saveUser("123", "duongvanbach")
+                UserCached.getInstance()?.saveUser("123", "duongvanbach")
                 MainActivity.start(this@LoginActivity)
+                finish()
             }
         })
 
 
-    }
-
-    private fun onAttachedView() {
-        mPresenter = LoginPresenter()
-        mPresenter?.onAttachView(this)
     }
 
     companion object {

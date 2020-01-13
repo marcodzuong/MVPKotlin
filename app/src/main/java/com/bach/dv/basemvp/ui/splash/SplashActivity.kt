@@ -8,19 +8,19 @@ class SplashActivity : BaseActivity<SplashPresenter>(), ISplashView {
 
     override fun goToContinue() {
         LoginActivity.start(this)
+        finish()
+    }
+
+    init {
+        mPresenter = SplashPresenter()
+        mPresenter?.onAttachView(this)
     }
 
     override val layoutId: Int
         get() = R.layout.activity_splash
 
     override fun initData() {
-        onAttachView()
         mPresenter?.postDelay()
-    }
-
-    private fun onAttachView() {
-        mPresenter = SplashPresenter()
-        mPresenter?.onAttachView(this)
     }
 
 

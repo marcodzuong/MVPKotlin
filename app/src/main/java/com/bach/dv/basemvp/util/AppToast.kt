@@ -8,9 +8,13 @@ fun Context.toastSuccess(content: String) {
 }
 
 fun Context.toastError(content: String) {
-    Toasty.error(this, content, Toasty.LENGTH_LONG).show()
+    Toasty.error(this, content, Toasty.LENGTH_SHORT).show()
 }
 
 fun Context.toastWarning(content: String) {
-    Toasty.warning(this, content, Toasty.LENGTH_LONG).show()
+    Toasty.warning(this, content, Toasty.LENGTH_SHORT).show()
+}
+
+fun Context.toastNormal(content: String) {
+    Toasty.normal(this, content, Toasty.LENGTH_SHORT).show()
 }
