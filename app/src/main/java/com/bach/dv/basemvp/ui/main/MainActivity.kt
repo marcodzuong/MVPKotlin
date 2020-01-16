@@ -10,7 +10,7 @@ import com.bach.dv.basemvp.data.cached.UserCached
 import com.bach.dv.basemvp.ui.base.BaseActivity
 import com.bach.dv.basemvp.util.toastNormal
 
-class MainActivity : BaseActivity<MainPresenter?>(), IMainView {
+class MainActivity() : BaseActivity<MainPresenter?>(), IMainView {
     override fun showToast() {
     }
 
