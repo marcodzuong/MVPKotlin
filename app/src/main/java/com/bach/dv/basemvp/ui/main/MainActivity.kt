@@ -1,5 +1,6 @@
 package com.bach.dv.basemvp.ui.main
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.res.Resources
@@ -39,9 +40,14 @@ class MainActivity() : BaseActivity<MainPresenter?>(), IMainView {
             val starter = Intent(context, MainActivity::class.java)
             context.startActivity(starter)
         }
+
+        fun startForResult(context: Activity, code: Int) {
+            val starter = Intent(context, MainActivity::class.java)
+            context.startActivityForResult(starter, code)
+        }
     }
 
-    var count = 0
+    private var count = 0
     override fun onBackPressed() {
         count++
         handlerClickBack()
@@ -54,5 +60,6 @@ class MainActivity() : BaseActivity<MainPresenter?>(), IMainView {
         }
         android.os.Handler().postDelayed({ count = 0 }, 600)
     }
+
 
 }
