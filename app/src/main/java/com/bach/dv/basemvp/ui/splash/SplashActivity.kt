@@ -21,6 +21,7 @@ class SplashActivity : BaseActivity<SplashPresenter>(), ISplashView {
 
     override fun initData() {
         mPresenter?.postDelay()
+
     }
 
 

@@ -6,16 +6,39 @@
     android:background="@color/colorPrimaryDark"
     tools:context=".ui.login.LoginActivity">
 
-    <TextView
-        android:id="@+id/tvLogin"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
-        android:background="#C26666"
-        android:gravity="center"
-        android:text="Dang nhap"
-        android:textColor="#FFFF"
-        android:textSize="20sp" />
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvLogin"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_tv_login"
+            android:gravity="center"
+            android:text="Dang nhap"
+            android:textColor="#FFFF"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/edtUserName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:hint="Tai khoan"
+            android:textColorHint="#FFFF" />
+
+        <EditText
+            android:id="@+id/edtPass"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:hint="Mat khau"
+            android:textColorHint="#FFFF" />
+    </LinearLayout>
+
 </FrameLayout>
