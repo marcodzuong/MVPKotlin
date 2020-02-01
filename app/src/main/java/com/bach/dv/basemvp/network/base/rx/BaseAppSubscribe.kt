@@ -47,7 +47,7 @@ class BaseAppSubscribe<T>() : DisposableObserver<T>() {
         }
     }
 
-    fun getType(): Type? {
+    private fun getType(): Type? {
         return null
     }
 

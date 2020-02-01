@@ -66,4 +66,12 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     // custom toast
     implementation 'com.github.GrenderG:Toasty:1.4.2'
+    implementation files('libs/joda-time-2.3.jar')
+    implementation 'net.danlew:android.joda:2.10.3'
+    ///fresco
+    implementation 'com.facebook.fresco:animated-gif:2.0.0'
+    implementation 'jp.wasabeef:fresco-processors:2.1.0'
+    implementation 'com.facebook.fresco:fresco:1.13.0'
+    implementation 'jp.wasabeef:fresco-processors:2.1.0'
+    implementation "com.facebook.fresco:imagepipeline-okhttp3:2.0.0"
 }

@@ -16,5 +16,4 @@ object Constants {
         val CATEGORY_SAVE_CACHED = "CATEGORY_SAVE_CACHED"
     }
 
-
 }
