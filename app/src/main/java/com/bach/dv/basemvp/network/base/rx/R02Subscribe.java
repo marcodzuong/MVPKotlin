@@ -1,6 +1,7 @@
 package com.bach.dv.basemvp.network.base.rx;
 
 import com.bach.dv.basemvp.network.base.remote.response.BaseException;
+import com.bach.dv.basemvp.network.cached.APISharedPrefUtils;
 import com.bach.dv.basemvp.network.model.TryRequest;
 import com.bach.dv.basemvp.ui.base.BaseView;
 import com.bach.dv.basemvp.ui.common.Constants;
@@ -79,7 +80,7 @@ public abstract class R02Subscribe<T> extends DisposableObserver<T> {
             if (loadFirst) {
                 onAfterGetCache();
             }
-            cached = APISharedPrefsUtils.getStringPreference(keyCached);
+            cached = APISharedPrefUtils.getStringPreference();
             if (cached != null && getType() != null) {
                 objectCached = GsonHelper.getInstance().fromJson(cached, getType());
                 if (loadFirst) {
@@ -284,7 +285,5 @@ public abstract class R02Subscribe<T> extends DisposableObserver<T> {
             isSame = cached != null && cached.equals(responseNew);
             return this;
         }
-
-
     }
 }

@@ -1,7 +1,7 @@
 package com.bach.dv.basemvp.ui.splash
 
 import com.bach.dv.basemvp.R
-import com.bach.dv.basemvp.base.BaseActivity
+import com.bach.dv.basemvp.ui.base.BaseActivity
 import com.bach.dv.basemvp.ui.main.MainActivity
 
 class SplashActivity : BaseActivity<SplashPresenter>(), ISplashView {

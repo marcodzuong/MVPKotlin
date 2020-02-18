@@ -1,12 +1,8 @@
 package com.bach.dv.basemvp.ui.main
 
-import android.annotation.SuppressLint
-import android.app.Service
-import android.content.Intent
 import android.media.AudioManager
 import android.media.MediaPlayer
-import android.os.IBinder
-import com.bach.dv.basemvp.base.BasePresenter
+import com.bach.dv.basemvp.ui.base.BasePresenter
 
 class MainPresenter : BasePresenter<IMainView>(), IMainPresenter {
     var mediaPlayer: MediaPlayer? = null

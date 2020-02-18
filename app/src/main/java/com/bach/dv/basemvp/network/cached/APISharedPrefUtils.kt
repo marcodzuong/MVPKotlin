@@ -5,7 +5,7 @@ import android.content.SharedPreferences
 import android.text.TextUtils
 import com.bach.dv.basemvp.App
 
-class APISharedPrefUtils {
+class APISharedPrefUtils  {
     private constructor()
 
     companion object {

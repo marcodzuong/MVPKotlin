@@ -1,6 +1,6 @@
 package com.bach.dv.basemvp.ui.main
 
-import com.bach.dv.basemvp.base.IPresenter
+import com.bach.dv.basemvp.ui.base.IPresenter
 
 interface IMainPresenter : IPresenter<IMainView> {
 }

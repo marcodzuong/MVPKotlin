@@ -1,7 +1,7 @@
 package com.bach.dv.basemvp.ui.login
 
 import com.bach.dv.basemvp.R
-import com.bach.dv.basemvp.base.BaseActivity
+import com.bach.dv.basemvp.ui.base.BaseActivity
 
 class LoginActivity : BaseActivity<LoginPresenter>( ),ILoginView {
     override val layoutId: Int

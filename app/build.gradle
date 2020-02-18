@@ -65,4 +65,5 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     // custom toast
     implementation 'com.github.GrenderG:Toasty:1.4.2'
+    implementation 'net.danlew:android.joda:2.10.3'
 }

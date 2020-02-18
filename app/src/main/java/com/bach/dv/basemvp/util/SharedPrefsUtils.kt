@@ -10,7 +10,6 @@ abstract class SharedPrefsUtils {
     private var sharedPreferences: SharedPreferences? = null
     private var editor: SharedPreferences.Editor? = null
 
-    private constructor()
 
     fun getStringPreference(key: String): String? {
         preferences = getInstance()

@@ -3,20 +3,14 @@ package com.bach.dv.basemvp.ui.main
 import android.content.Context
 import android.content.Intent
 import android.view.View
-import android.widget.Button
-import butterknife.BindView
 import com.bach.dv.basemvp.R
-import com.bach.dv.basemvp.base.BaseActivity
+import com.bach.dv.basemvp.ui.base.BaseActivity
 import com.bach.dv.basemvp.service.MusicService
-import com.bach.dv.basemvp.utils.toastSuccess
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity<MainPresenter?>(), IMainView {
 
 
-    @BindView(R.id.btnStop)
-    lateinit var btnStop: Button
-    @BindView(R.id.btnStart)
-    lateinit var btnStart: Button
     override val layoutId: Int
         get() = R.layout.activity_main
 

@@ -1,4 +1,4 @@
-package com.bach.dv.basemvp.ui
+package com.bach.dv.basemvp
 
 import android.annotation.SuppressLint
 import android.app.Application
@@ -10,7 +10,7 @@ class App : Application() {
         private var context: Context? = null
 
         fun getAppContext(): Context? {
-            return App.context
+            return context
         }
     }
 
