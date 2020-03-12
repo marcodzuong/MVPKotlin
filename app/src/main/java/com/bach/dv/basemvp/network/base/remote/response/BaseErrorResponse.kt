@@ -1,9 +1,8 @@
 package com.bach.dv.basemvp.network.base.remote.response
 
 class BaseErrorResponse {
-
-    var errors: MutableList<Error>? = null
-    fun getErrorCode(): String? {
+    var errors: ArrayList<Error>? = null
+    fun getErrorCode(): Int? {
         return errors?.get(0)?.code
     }
 
@@ -11,20 +10,18 @@ class BaseErrorResponse {
         return errors?.get(0)?.message
     }
 
-    fun setError(code: String, message: String) {
-        errors = mutableListOf()
-        var error = Error()
+    fun setError(code: Int, message: String) {
+        errors = ArrayList()
+        val error = Error()
         error.code = code
         error.message = message
         errors!!.add(Error())
     }
 
 
-    companion object {
-        class Error {
-            var code: String? = null
-            var message: String? = null
-        }
+    class Error {
+        var code: Int? = null
+        var message: String? = null
     }
 
 }

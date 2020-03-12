@@ -21,9 +21,28 @@ open class BaseRemote {
         private var okHttpClient: OkHttpClient? = null
         private var retrofitBrowse: Retrofit? = null
         private var retrofit: Retrofit? = null
-        const val REQUEST_TIMEOUT: Long = 60
-        protected fun <T> create(clazz: Class<T>): T? {
-            return getInstance()?.create(clazz)
+        const val REQUEST_TIMEOUT: Long = 20
+        private fun getInstance(): Retrofit {
+            val gson = GsonBuilder()
+                .setLenient()
+                .create()
+
+            if (okHttpClient == null) {
+                initOkHttp()
+            }
+            if (retrofit == null) {
+                retrofit = Retrofit.Builder()
+                    .baseUrl(URL)
+                    .client(okHttpClient)
+                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create(gson))
+                    .build()
+            }
+            return this.retrofit!!
+        }
+
+        protected fun <T> create(clazz: Class<T>?): T {
+            return getInstance()!!.create(clazz)
         }
 
         protected fun <T> createWithTypeAdapter(
@@ -52,24 +71,6 @@ open class BaseRemote {
             return retrofitBrowse
         }
 
-        private fun getInstance(): Retrofit? {
-            val gson = GsonBuilder()
-                .setLenient()
-                .create()
-
-            if (okHttpClient == null) {
-                initOkHttp()
-            }
-            if (retrofit == null) {
-                retrofit = Retrofit.Builder()
-                    .baseUrl(URL)
-                    .client(okHttpClient)
-                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                    .addConverterFactory(GsonConverterFactory.create(gson))
-                    .build()
-            }
-            return retrofit
-        }
 
         private fun initOkHttp() {
             val httpClient =

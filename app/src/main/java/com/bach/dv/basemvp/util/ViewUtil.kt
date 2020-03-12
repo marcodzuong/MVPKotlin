@@ -6,6 +6,7 @@ import com.bach.dv.basemvp.R
 
 class ViewUtil {
     companion object {
+        @JvmStatic
         fun dpToPx(dp: Int): Int {
             val density = Resources.getSystem().displayMetrics.density
             return Math.round(dp * density)

@@ -3,9 +3,9 @@ package com.bach.dv.basemvp.network.base.remote.response
 import com.google.gson.annotations.SerializedName
 
 open class DataResponse {
-    @SerializedName("")
-    var message: String? = null
+    @SerializedName("status_code")
+    var statusCode: Int = 0
     @SerializedName("status")
-    var status: String? = null
+    lateinit var status: String
 
 }

@@ -1,6 +1,5 @@
 package com.bach.dv.basemvp.network.base.rx
 
-import com.bach.dv.basemvp.network.cached.APISharedPrefUtils
 import com.bach.dv.basemvp.ui.base.BaseView
 import io.reactivex.observers.DisposableObserver
 import java.lang.ref.WeakReference
