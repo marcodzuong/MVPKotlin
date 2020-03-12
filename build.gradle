@@ -26,3 +26,47 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext{
+    // Sdk and tools
+    minSdkVersion = 21
+    targetSdkVersion = 29
+    compileSdkVersion = 29
+    buildToolsVersion = '29.0.2'
+
+    // App dependencies
+    supportLibraryVersion = '25.4.0'
+    junitVersion = '4.12'
+    guavaVersion = '18.0'
+    espressoVersion = '2.2.2'
+    rxjavaVersion = '2.1.13'
+    rxandroidVersion = '2.1.1'
+    gsonVersion = '2.8.0'
+    retrofitVersion = '2.4.0'
+    rxAdapterVersion = '2.0.1'
+    loggingVersion = '3.2.0'
+    gsonConverterVersion = '2.0.2'
+    glideVersion = '3.7.0'
+    constraintVersion = '1.0.2'
+    butterknifeVersion = '8.5.1'
+    mapVersion = "10.2.6"
+    eventbusVersion = "3.1.1"
+    multidexVersion = "1.0.3"
+    fireBaseCoreVersion = "17.2.0"
+    fireBaseAnalytics = "17.0.1"
+    fireBaseCrashAnalytics = "2.10.1"
+    fireBaseMessageVersion = "20.0.0"
+
+    fireBaseDynamicLinks = "19.0.0"
+
+    firebaseInAppMessaging = "19.0.1"
+    firebaseConfig = "19.0.3"
+
+    appCenterSdkVersion = '1.11.4'
+    roomVersion = '2.2.0'
+    crashlytics = '2.10.0'
+    requestPermissionVersion = '6.0.0'
+    okdownloadVersion = '1.0.5'
+    retrofitVersion = '2.5.0'
+    updateVersion = '1.6.4'
+}
